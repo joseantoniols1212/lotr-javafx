@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+
+<VBox alignment="CENTER" prefHeight="345.0" prefWidth="549.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.bosonit.project.lotrjfx.controller.AppController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <!-- Heroes -->
+    <HBox spacing="100" alignment="CENTER">
+        <VBox spacing="10">
+            <Label text="Heroes"/>
+            <HBox spacing="10">
+                <VBox spacing="10">
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="heroNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="Class:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="heroClass" prefWidth="150" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Health:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="heroHealth" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Armor:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <TextField fx:id="heroArmor" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                    </GridPane>
+                    <HBox spacing="5">
+                        <Button text="Add" id="addHeroButton" onAction="#onAddHeroButtonClick"/>
+                        <Button text="Random" id="randomHeroButton" onAction="#onRandomHeroButtonClick"/>
+                    </HBox>
+                </VBox>
+                <VBox spacing="10">
+                    <ListView fx:id="heroList" prefWidth="300" prefHeight="120"/>
+                    <HBox spacing="5">
+                        <Button text="Up" id="heroUpButton" onAction="#onUpHeroButtonClick"/>
+                        <Button text="Down" id="heroDownButton" onAction="#onDownHeroButtonClick"/>
+                        <Button text="Delete" id="heroDeleteButton" onAction="#onDeleteHeroButtonClick"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- Beasts -->
+        <VBox spacing="10">
+            <Label text="Beasts"/>
+
+            <HBox spacing="10">
+                <VBox spacing="10">
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="beastName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="Class:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="beastClass" prefWidth="150" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Health:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="beastHealth" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Armor:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <TextField fx:id="beastArmor" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                    </GridPane>
+                    <HBox spacing="10">
+                        <Button text="Add" id="addBeastButton" onAction="#onAddBeastButtonClick"/>
+                        <Button text="Random" id="randomBeastButton" onAction="#onRandomBeastButtonClick"/>
+                    </HBox>
+                </VBox>
+                <VBox spacing="5">
+                    <ListView fx:id="beastList" prefWidth="300" prefHeight="120"/>
+                    <HBox spacing="5">
+                        <Button text="Up" id="beastUpButton" onAction="#onUpBeastButtonClick"/>
+                        <Button text="Down" id="beastDownButton" onAction="#onDownBeastButtonClick"/>
+                        <Button text="Delete" id="beastDeleteButton" onAction="#onDeleteBeastButtonClick"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <VBox spacing="10">
+        <!-- Botón de lucha -->
+        <Button text="Fight" fx:id="fightButton" maxWidth="Infinity" onAction="#onFightButtonClick"/>
+
+        <!-- Área de resultados -->
+        <TextArea fx:id="battleLog" prefHeight="300"/>
+    </VBox>
+
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</VBox>
