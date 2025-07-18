@@ -8,7 +8,9 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.subjects.PublishSubject;
 
 import java.util.*;
+import java.util.function.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class BattleEngine {
     final int MAX_ROUNDS = 500;
@@ -44,25 +46,19 @@ public class BattleEngine {
     }
 
     private void fightRound() {
-        for(int i = 0; i < Math.max(beastArmy.size(), heroArmy.size()); i++) {
-            Beast beast = beastArmy.get(i % beastArmy.size());
-            Hero hero = heroArmy.get(i % heroArmy.size());
-            FightResult fightResult = fight(hero, beast);
-            eventStream.onNext(fightResult);
-        }
+        IntStream.range(0, Math.max(heroArmy.size(), beastArmy.size()))
+                .mapToObj(i -> fight(heroArmy.get(i % heroArmy.size()), beastArmy.get(i % beastArmy.size())))
+                .forEach(eventStream::onNext);
 
-        removeDeadCharacters(heroArmy);
-        removeDeadCharacters(beastArmy);
-    }
+        Predicate<Character> isDeadAndNotify = c -> {
+                boolean result = c.getHealth() <= 0;
+                if (result)
+                    eventStream.onNext(new CharacterDeath(c));
+                return result;
+        };
 
-    private void removeDeadCharacters(List<? extends Character> army) {
-        Set<? extends Character> deadCharacters = army.stream()
-                .filter(e -> e.getHealth() <= 0)
-                .peek(
-                        c -> eventStream.onNext(new CharacterDeath(c))
-                )
-                .collect(Collectors.toSet());
-        army.removeAll(deadCharacters);
+        beastArmy.removeIf(isDeadAndNotify);
+        heroArmy.removeIf(isDeadAndNotify);
     }
 
     private FightResult fight(Hero hero, Beast beast) {
