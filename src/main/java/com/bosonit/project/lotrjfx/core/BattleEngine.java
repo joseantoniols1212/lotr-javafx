@@ -29,7 +29,6 @@ public class BattleEngine {
 
     public void start() {
         for (int i = 0; i < MAX_ROUNDS && !beastArmy.isEmpty() && !heroArmy.isEmpty(); i++) {
-            System.out.println("b");
             eventStream.onNext(new RoundStart(i));
             fightRound();
         }
