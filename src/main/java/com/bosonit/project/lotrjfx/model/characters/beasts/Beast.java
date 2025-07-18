@@ -31,7 +31,6 @@ public class Beast extends Character implements Cloneable {
             case ORC, GOBLIN -> switch (opponentClass) {
                 case HeroClass _ -> 0;
                 case BeastClass _ -> throw new InvalidDuel(this.beastClass + " beast class can't fight against " + opponentClass);
-                default -> throw new IllegalStateException("Unexpected value: " + opponentClass);
             };
         };
     }
@@ -42,7 +41,6 @@ public class Beast extends Character implements Cloneable {
             case ORC, GOBLIN -> switch (opponentClass) {
                 case HeroClass _ -> 0;
                 case BeastClass _ -> throw new InvalidDuel(this.beastClass + " beast class can't fight against " + opponentClass);
-                default -> throw new IllegalStateException("Unexpected value: " + opponentClass);
             };
         };
     }

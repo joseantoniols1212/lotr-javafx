@@ -37,18 +37,15 @@ public class Hero extends Character implements Cloneable {
                 case BeastClass.ORC -> 10;
                 case BeastClass.GOBLIN -> 0;
                 case HeroClass _ -> throw new InvalidDuel(this.heroClass + " hero class can't fight against " + opponentClass);
-                default -> throw new IllegalStateException("Unexpected value: " + opponentClass);
             };
             case HOBBIT -> switch (opponentClass) {
                 case BeastClass.ORC -> 0;
                 case BeastClass.GOBLIN -> -5;
                 case HeroClass _ -> throw new InvalidDuel(this.heroClass + " hero class can't fight against " + opponentClass);
-                default -> throw new IllegalStateException("Unexpected value: " + opponentClass);
             };
             case HUMAN -> switch (opponentClass) {
                 case BeastClass.ORC, BeastClass.GOBLIN -> 0;
                 case HeroClass _ -> throw new InvalidDuel(this.heroClass + " hero class can't fight against " + opponentClass);
-                default -> throw new IllegalStateException("Unexpected value: " + opponentClass);
             };
         };
     }
@@ -60,7 +57,6 @@ public class Hero extends Character implements Cloneable {
                 case BeastClass.ORC -> -Math.floorDiv(getArmor(), 10);
                 case BeastClass.GOBLIN -> 0;
                 case HeroClass _ -> throw new InvalidDuel(this.heroClass + " hero class can't fight against " + opponentClass);
-                default -> throw new IllegalStateException("Unexpected value: " + opponentClass);
             };
         };
     }
