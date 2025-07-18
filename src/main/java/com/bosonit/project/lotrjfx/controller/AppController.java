@@ -1,15 +1,15 @@
 package com.bosonit.project.lotrjfx.controller;
 
-import com.bosonit.project.lotrjfx.core.BattleEngine;
-import com.bosonit.project.lotrjfx.exceptions.InvalidInput;
+import com.bosonit.project.lotrjfx.model.BattleEngine;
+import com.bosonit.project.lotrjfx.model.exceptions.InvalidInput;
 import com.bosonit.project.lotrjfx.model.characters.beasts.Beast;
 import com.bosonit.project.lotrjfx.model.characters.beasts.BeastClass;
 import com.bosonit.project.lotrjfx.model.characters.heroes.Hero;
 import com.bosonit.project.lotrjfx.model.characters.heroes.HeroClass;
 import com.bosonit.project.lotrjfx.model.events.*;
-import com.bosonit.project.lotrjfx.services.CharacterFactory;
-import com.bosonit.project.lotrjfx.services.CharacterService;
-import com.bosonit.project.lotrjfx.services.CharacterServiceImpl;
+import com.bosonit.project.lotrjfx.model.services.CharacterFactory;
+import com.bosonit.project.lotrjfx.model.services.CharacterService;
+import com.bosonit.project.lotrjfx.model.services.CharacterServiceImpl;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

@@ -1,4 +1,4 @@
-package com.bosonit.project.lotrjfx.core;
+package com.bosonit.project.lotrjfx.model;
 
 import com.bosonit.project.lotrjfx.model.characters.Character;
 import com.bosonit.project.lotrjfx.model.characters.beasts.Beast;

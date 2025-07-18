@@ -11,6 +11,8 @@ module com.bosonit.project.lotrjfx {
     opens com.bosonit.project.lotrjfx.core to javafx.fxml;
     exports com.bosonit.project.lotrjfx.controller;
     opens com.bosonit.project.lotrjfx.controller to javafx.fxml;
-    exports com.bosonit.project.lotrjfx.services;
-    opens com.bosonit.project.lotrjfx.services to javafx.fxml;
+    exports com.bosonit.project.lotrjfx.model.services;
+    opens com.bosonit.project.lotrjfx.model.services to javafx.fxml;
+    exports com.bosonit.project.lotrjfx.model;
+    opens com.bosonit.project.lotrjfx.model to javafx.fxml;
 }

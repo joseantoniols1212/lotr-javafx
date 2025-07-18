@@ -1,6 +1,6 @@
 package com.bosonit.project.lotrjfx.model.characters.beasts;
 
-import com.bosonit.project.lotrjfx.exceptions.InvalidDuel;
+import com.bosonit.project.lotrjfx.model.exceptions.InvalidDuel;
 import com.bosonit.project.lotrjfx.model.characters.Character;
 import com.bosonit.project.lotrjfx.model.characters.CharacterClass;
 import com.bosonit.project.lotrjfx.model.characters.heroes.HeroClass;

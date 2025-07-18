@@ -1,7 +1,7 @@
-package com.bosonit.project.lotrjfx.services;
+package com.bosonit.project.lotrjfx.model.services;
 
-import com.bosonit.project.lotrjfx.exceptions.NotImplementedBeastException;
-import com.bosonit.project.lotrjfx.exceptions.NotImplementedHeroException;
+import com.bosonit.project.lotrjfx.model.exceptions.NotImplementedBeastException;
+import com.bosonit.project.lotrjfx.model.exceptions.NotImplementedHeroException;
 import com.bosonit.project.lotrjfx.model.characters.beasts.BeastClass;
 import com.bosonit.project.lotrjfx.model.characters.heroes.HeroClass;
 

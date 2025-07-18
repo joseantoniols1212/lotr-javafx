@@ -1,4 +1,4 @@
-package com.bosonit.project.lotrjfx.services;
+package com.bosonit.project.lotrjfx.model.services;
 
 import com.bosonit.project.lotrjfx.model.characters.beasts.Beast;
 import com.bosonit.project.lotrjfx.model.characters.beasts.BeastClass;

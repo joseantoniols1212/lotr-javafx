@@ -1,6 +1,6 @@
-package com.bosonit.project.lotrjfx.services;
+package com.bosonit.project.lotrjfx.model.services;
 
-import com.bosonit.project.lotrjfx.exceptions.InvalidInput;
+import com.bosonit.project.lotrjfx.model.exceptions.InvalidInput;
 import com.bosonit.project.lotrjfx.model.characters.beasts.Beast;
 import com.bosonit.project.lotrjfx.model.characters.beasts.BeastClass;
 import com.bosonit.project.lotrjfx.model.characters.heroes.*;
