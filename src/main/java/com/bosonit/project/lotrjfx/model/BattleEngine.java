@@ -61,6 +61,9 @@ public class BattleEngine {
     }
 
     private FightResult fight(Hero hero, Beast beast) {
+        Hero heroClone = hero.clone();
+        Beast beastClone = beast.clone();
+
         int heroAttackPower = hero.getAttackPower();
         int beastAttackPower = beast.getAttackPower();
 
@@ -74,8 +77,8 @@ public class BattleEngine {
         int beastReceivedDamage = beast.getDamage(heroAttackPower, heroExtraAttackPower, beastExtraArmor);
 
         return new FightResult(
-                hero.clone(),
-                beast.clone(),
+                heroClone,
+                beastClone,
                 heroAttackPower,
                 beastAttackPower,
                 heroExtraArmor,
