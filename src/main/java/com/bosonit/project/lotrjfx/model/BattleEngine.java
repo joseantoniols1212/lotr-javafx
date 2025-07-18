@@ -28,10 +28,9 @@ public class BattleEngine {
     }
 
     public void start() {
-        for (int i = 0; i < MAX_ROUNDS && !beastArmy.isEmpty() && !heroArmy.isEmpty(); i++) {
-            eventStream.onNext(new RoundStart(i));
-            fightRound();
-        }
+        IntStream.range(0, MAX_ROUNDS)
+                .takeWhile(_ -> !beastArmy.isEmpty() && !heroArmy.isEmpty())
+                .forEach(this::fightRound);
 
         if (beastArmy.isEmpty()) {
             eventStream.onNext(new GameOver("Heroes win!"));
@@ -44,7 +43,9 @@ public class BattleEngine {
         eventStream.onComplete();
     }
 
-    private void fightRound() {
+    private void fightRound(int round) {
+        eventStream.onNext(new RoundStart(round));
+
         IntStream.range(0, Math.max(heroArmy.size(), beastArmy.size()))
                 .mapToObj(i -> fight(heroArmy.get(i % heroArmy.size()), beastArmy.get(i % beastArmy.size())))
                 .forEach(eventStream::onNext);
