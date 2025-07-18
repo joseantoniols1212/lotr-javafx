@@ -1,7 +1,5 @@
 package com.bosonit.project.lotrjfx.model.services;
 
-import com.bosonit.project.lotrjfx.model.exceptions.NotImplementedBeastException;
-import com.bosonit.project.lotrjfx.model.exceptions.NotImplementedHeroException;
 import com.bosonit.project.lotrjfx.model.characters.beasts.BeastClass;
 import com.bosonit.project.lotrjfx.model.characters.heroes.HeroClass;
 
@@ -51,8 +49,6 @@ public class NameGenerator {
             case ELF -> generateFromParts(elfPrefixes, elfSuffixes);
             case HUMAN -> generateFromParts(humanPrefixes, humanSuffixes);
             case HOBBIT -> generateFromParts(hobbitPrefixes, hobbitSuffixes);
-            default ->
-                    throw new NotImplementedHeroException("Generate name is not implemented for class: " + heroClass.toString());
         };
     }
 
@@ -60,8 +56,6 @@ public class NameGenerator {
         return switch (beastClass) {
             case ORC -> generateFromParts(orcPrefixes, orcSuffixes);
             case GOBLIN -> generateFromParts(goblinPrefixes, goblinSuffixes);
-            default ->
-                    throw new NotImplementedBeastException("Generate name is not implemented for class: " + beastClass.toString());
         };
     }
 
